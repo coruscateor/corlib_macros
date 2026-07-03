@@ -7,7 +7,7 @@ use quote::quote;
 use syn::{DeriveInput, parse_macro_input};
 
 ///
-/// A derive macro for the corlib::convert::AsAnyRef trait.
+/// A derive macro for the corlib::any::AsAnyRef trait.
 /// 
 /// The aforementioned trait is required to be in scope for this derive macro to be used.
 /// 
@@ -24,7 +24,7 @@ pub fn as_any_ref(input: proc_macro::TokenStream) -> proc_macro::TokenStream
     let as_any_ref_impl = quote!
     {
 
-        impl #impl_generics corlib::convert::AsAnyRef for #name #ty_generics #where_clause
+        impl #impl_generics corlib::any::AsAnyRef for #name #ty_generics #where_clause
         {
 
             fn as_any_ref(&self) -> &dyn core::any::Any
@@ -43,9 +43,9 @@ pub fn as_any_ref(input: proc_macro::TokenStream) -> proc_macro::TokenStream
 }
 
 ///
-/// A derive macro for the corlib::convert::AsAnyMut trait.
+/// A derive macro for the corlib::any::AsAnyMut trait.
 ///
-/// The aforementioned trait as well as the corlib::convert::AsAnyRef trait are required to be in scope for this derive macro to be used.
+/// The aforementioned trait as well as the corlib::any::AsAnyRef trait are required to be in scope for this derive macro to be used.
 /// 
 #[proc_macro_derive(AsAnyMut)]
 pub fn as_any_mut(input: proc_macro::TokenStream) -> proc_macro::TokenStream
@@ -64,7 +64,7 @@ pub fn as_any_mut(input: proc_macro::TokenStream) -> proc_macro::TokenStream
     let as_any_mut_impl = quote!
     {
 
-        impl #impl_generics corlib::convert::AsAnyRef for #name #ty_generics #where_clause
+        impl #impl_generics corlib::any::AsAnyRef for #name #ty_generics #where_clause
         {
 
             fn as_any_ref(&self) -> &dyn core::any::Any
@@ -76,7 +76,7 @@ pub fn as_any_mut(input: proc_macro::TokenStream) -> proc_macro::TokenStream
 
         }
 
-        impl #impl_generics corlib::convert::AsAnyMut for #name #ty_generics #where_clause
+        impl #impl_generics corlib::any::AsAnyMut for #name #ty_generics #where_clause
         {
 
             fn as_any_mut(&mut self) -> &mut dyn core::any::Any

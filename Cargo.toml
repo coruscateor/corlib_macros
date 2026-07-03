@@ -1,12 +1,13 @@
 [package]
 name = "corlib_macros"
-version = "0.1.0"
+version = "0.1.1-alpha"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "Procedural macros for Corlib"
 repository = "https://github.com/coruscateor/corlib_macros"
 homepage = "https://coruscateor.com/projects/corlib"
 keywords = ["general", "various", "ideas", "procedural", "macros"]
+authors = ["Paul Saunders"]
 
 [lib]
 proc-macro = true
