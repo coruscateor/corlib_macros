@@ -113,7 +113,7 @@ pub fn rc_default(input: proc_macro::TokenStream) -> proc_macro::TokenStream
 
     let (impl_generics, ty_generics, where_clause) = input.generics.split_for_impl();
 
-    let as_any_ref_impl = quote!
+    let rc_default_impl = quote!
     {
 
         impl #impl_generics corlib::rc::RcDefault for #name #ty_generics #where_clause
@@ -132,7 +132,7 @@ pub fn rc_default(input: proc_macro::TokenStream) -> proc_macro::TokenStream
 
     };
 
-    as_any_ref_impl.into()
+    rc_default_impl.into()
 
 }
 
@@ -153,7 +153,7 @@ pub fn arc_default(input: proc_macro::TokenStream) -> proc_macro::TokenStream
 
     let (impl_generics, ty_generics, where_clause) = input.generics.split_for_impl();
 
-    let as_any_ref_impl = quote!
+    let arc_default_impl = quote!
     {
 
         impl #impl_generics corlib::rc::ArcDefault for #name #ty_generics #where_clause
@@ -172,7 +172,7 @@ pub fn arc_default(input: proc_macro::TokenStream) -> proc_macro::TokenStream
 
     };
 
-    as_any_ref_impl.into()
+    arc_default_impl.into()
 
 }
 
@@ -193,7 +193,7 @@ pub fn weak_self(input: proc_macro::TokenStream) -> proc_macro::TokenStream
 
     let (impl_generics, ty_generics, where_clause) = input.generics.split_for_impl();
 
-    let as_any_ref_impl = quote!
+    let weak_self_impl = quote!
     {
 
         impl #impl_generics corlib::WeakSelf for #name #ty_generics #where_clause
@@ -217,6 +217,6 @@ pub fn weak_self(input: proc_macro::TokenStream) -> proc_macro::TokenStream
 
     };
 
-    as_any_ref_impl.into()
+    weak_self_impl.into()
 
 }
