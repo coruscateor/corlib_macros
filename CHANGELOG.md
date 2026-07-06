@@ -15,31 +15,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
--- Updated the package version to 0.1.1-alpha.
-
 - Updated the documentation.
-
--- Prepared the changelog.
 
 - Updated the quote dependency to version 1.0.46.
 
 - Updated the readme.
 
-
-
-### Deprecated
-
-
-
-### Removed
+- Other minor changes.
 
 
 
 ### Fixed
 
 - Corrected the trait module paths of the trait meta-implementations contained in the AsAnyRef and AsAnyMut procedural macro definitions.
-
-### Security
 
 
 
